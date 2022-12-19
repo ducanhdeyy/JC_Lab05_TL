@@ -1,5 +1,7 @@
 package bkap.entity;
 
+import java.util.Scanner;
+
 public class Employee {
 	//Trường
 	private String employeeId;
@@ -8,7 +10,6 @@ public class Employee {
 	private float rate;
 	private float salary;
 	private Boolean employeeStatus;
-	
 	//2 contructor
 	//contructor default
 	public Employee() {
@@ -39,11 +40,56 @@ public class Employee {
 		System.out.println("rate nhân viên là:"+this.rate);
 		System.out.println("... nhân viên là:"+this.employeeStatus);
 	}
-	public String getEmployeeName() {
-		return this.employeeName;
+	public String getEmployeeId() {
+		return employeeId;
 	}
-	public void setEmployeeName(String EmployeeId) {
-		 this.employeeName = employeeName;
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public float getRate() {
+		return rate;
+	}
+	public void setRate(float rate) {
+		this.rate = rate;
+	}
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	public Boolean getEmployeeStatus() {
+		return employeeStatus;
+	}
+	public void setEmployeeStatus(Boolean employeeStatus) {
+		this.employeeStatus = employeeStatus;
+	}
+	public void inputData(Scanner sc) {
+		System.out.println("Nhập Id nhân viên");
+		this.employeeId = sc.nextLine();
+		System.out.println("Nhập tên nhân viên");
+		this.employeeName = sc.nextLine();
+		System.out.println("Nhập tuổi nhân viên");
+		this.age = Integer.parseInt(sc.nextLine());
+		System.out.println("Nhập rate nhân viên");
+		this.rate = Float.parseFloat(sc.nextLine());
+		System.out.println("Nhập trạng thái nhân viên");
+		this.employeeStatus = Boolean.parseBoolean(sc.nextLine());
+	}
+	public float calSalary() {
+		return this.salary = this.rate*1300000;
 	}
 	
 }
